@@ -1,0 +1,440 @@
+/*────────────────────────────────────────────────────────*/
+/*                    Imports & Variables                */
+/*────────────────────────────────────────────────────────*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --font: 'Inter', sans-serif;
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --text: #333333;
+  --accent: #0066ff;
+  --shadow: rgba(0,0,0,0.05);
+  --radius: 0.5rem;
+  --gap: 1.5rem;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                   Global Reset & Base                 */
+/*────────────────────────────────────────────────────────*/
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+button:hover {
+  background: linear-gradient(135deg, #0052cc, #007bff);
+  box-shadow: 0 4px 12px rgba(0,102,255,0.2);
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                       Sidebar                         */
+/*────────────────────────────────────────────────────────*/
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 220px; height: 100%;
+  background: var(--panel);
+  box-shadow: 2px 0 8px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap) 0;
+}
+nav .logo-image {
+  text-align: center;
+  margin-bottom: var(--gap);
+}
+nav .logo-image img {
+  height: 48px;
+}
+nav .menu-items {
+  flex: 1;
+}
+nav ul {
+  list-style: none;
+}
+nav li {
+  margin-bottom: 0.25rem;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+nav a ion-icon {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
+nav a:hover,
+nav .active a {
+  background: linear-gradient(to right, var(--accent), #0052cc);
+  color: #fff;
+  box-shadow: inset 2px 0 0 #004bb5;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                     Profile Popup                     */
+/*────────────────────────────────────────────────────────*/
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: linear-gradient(to bottom right, #ffffff, #ccced1);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  max-width: 90vw;
+  width: 350px;
+  display: none;
+  z-index: 1000;
+}
+.popup-content h2 {
+  margin-bottom: var(--gap);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+}
+.popup-content label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.popup-content input {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: var(--gap);
+  transition: border-color 0.2s;
+  background: transparent;
+}
+.popup-content input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+.popup-content button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+.popup-content button:hover {
+  background: #0052cc;
+  box-shadow: 0 4px 12px rgba(0,102,255,0.2);
+  transform: translateY(-2px);
+}
+.close-btn {
+  background: #e74c3c !important;
+  color: #fff !important;
+}
+.close-btn:hover {
+  background: #c0392b !important;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                     Main Dashboard                    */
+/*────────────────────────────────────────────────────────*/
+.dashboard {
+  margin-left: 220px;
+  padding: var(--gap);
+}
+@media (max-width: 768px) {
+  nav {
+    width: 80px;
+  }
+  .dashboard {
+    margin-left: 80px;
+    padding: 1rem;
+  }
+  .predictions,
+  .feedback {
+    grid-template-columns: 1fr;
+  }
+  .popup-container {
+    width: 90%;
+  }
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                       Overview                        */
+/*────────────────────────────────────────────────────────*/
+.container .overview .title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--gap);
+}
+.container .overview ion-icon {
+  font-size: 1.75rem;
+  color: var(--accent);
+  margin-right: 0.75rem;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                         Cards                         */
+/*────────────────────────────────────────────────────────*/
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+.box {
+  background: linear-gradient(to top left, #ffffff, #f7faff);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  background: linear-gradient(to top right, #ffffff, #ebf3ff);
+}
+.box ion-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.box .text {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+.box .number {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                   Activity & Data Tables              */
+/*────────────────────────────────────────────────────────*/
+.data-table {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  margin-bottom: var(--gap);
+  padding: var(--gap);
+}
+.data-table .title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--gap);
+}
+.data-table .title ion-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--gap);
+}
+.info-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+.info-table .icon {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+.action-btn {
+  padding: 0.5rem 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.action-btn:hover {
+  background: #c0392b;
+  box-shadow: 0 4px 12px rgba(192,57,43,0.2);
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                    Prediction & Feedback              */
+/*────────────────────────────────────────────────────────*/
+.predictions,
+.feedback {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+.prediction-box,
+.feedback-box {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.prediction-box .icon,
+.feedback-box .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.prediction-box .text,
+.feedback-box .text {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.prediction-box .number,
+.feedback-box .number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.feedback-box.positive .icon {
+  color: #27ae60;
+}
+.feedback-box.negative .icon {
+  color: #e74c3c;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                         Charts                        */
+/*────────────────────────────────────────────────────────*/
+.chart-section {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1rem;
+  margin: 1.5rem auto;
+  overflow-x: auto;
+  max-width: 800px;
+}
+.chart-section h3 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: var(--gap);
+}
+.chart-container {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  background: #f9fbfd;
+  border: 1px solid #e0e6ed;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.chart-container::-webkit-scrollbar {
+  height: 6px;
+}
+.chart-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/*────────────────────────────────────────────────────────*/
+/*                         Users Table                   */
+/*────────────────────────────────────────────────────────*/
+.table-container {
+  overflow-x: auto;
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  margin-bottom: var(--gap);
+  padding: var(--gap);
+}
+.table-container h2 {
+  margin-bottom: var(--gap);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+#usersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+#usersTable th,
+#usersTable td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+#usersTable th {
+  background: #f0f4f8;
+  font-weight: 500;
+}
+#usersTable tr:hover {
+  background: #f9f9f9;
+}
+#usersTable button {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+#usersTable button:hover {
+  background: #0052cc;
+  box-shadow: 0 4px 12px rgba(0,102,255,0.2);
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────*/  
+/*                         Search Bar                    */
+/*────────────────────────────────────────────────────────*/  
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--gap);
+}
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.search-bar button {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.search-bar button:hover {
+  background: #0052cc;
+  box-shadow: 0 4px 12px rgba(0,102,255,0.2);
+  transform: translateY(-2px);
+}

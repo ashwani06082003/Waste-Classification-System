@@ -1,0 +1,15 @@
+0 Metal
+1 Cardboard
+2 Glass
+3 Paper
+4 Plastic
+5 Non Recyclable
+6 Keyboard
+7 Mouse
+8 Battery
+9 Microwave
+10 Mobile
+11 PCB
+12 Printer
+13 Television
+14 Washing Machine

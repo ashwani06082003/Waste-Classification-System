@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        * {
+            color: #cab9c7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+        }
+        body {
+            background-color: #080710;
+        }
+
+        body.light-mode {
+            background-color: rgb(201, 194, 205); /* or your desired light background */
+    color: #000;
+}
+
+.light-mode h1, 
+.light-mode h2, 
+.light-mode h3, 
+.light-mode p, 
+.light-mode a,
+.light-mode li,
+.light-mode i,
+.light-mode span {
+    color: black !important;
+}
+
+        .hero {
+            background: url('image2.png') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: rgb(71, 61, 91);
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .team-member {
+            background:#48176b69;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 380px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        .team-member img {
+            width: 255px;
+    height: 326px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+        }
+        .team-member h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            color: gray;
+        }
+
+        #navbar {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    width: 100%; /* Full width */
+    background-color: #333; /* Background color */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Centers the list horizontally */
+    align-items: center; /* Centers the list vertically */
+    height: 60px; /* Set a height for the navbar */
+    z-index: 1000; /* Ensures it stays on top */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#navbar li {
+    margin: 0 10px;
+}
+
+#navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 27px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.icon:hover {
+    transform: scale(1.4);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.footer {
+    width: 101%;
+    background: #121212;
+    color: #f0f0f0;
+    padding: 50px 20px;
+    font-family: "Poppins", sans-serif;
+}
+.light-mode .footer{
+    background: #ccc;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 100;
+    margin: auto;
+}
+
+.footer h2 {
+    font-size: 22px;
+    color: #28a745;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #28a745;
+    margin-top: 5px;
+}
+
+.footer p, .footer ul {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin: 8px 0;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #28a745;
+}
+
+.footer-contact a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img:hover {
+    filter: brightness(1);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+ 
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="hero" style="font-size: 64px;">About Us</div>
+    <div class="content">
+        <h2>Who We Are ?</h2>
+        <p style="font-size: 26px;">In today's world, waste management has become a critical challenge. Improper disposal of waste not only harms the environment but also reduces the efficiency of recycling systems. Our mission is to bridge this gap by leveraging cutting-edge technology to create an intelligent waste classification system.
+
+            <br><br>
+
+            We are a team of passionate individuals dedicated to building a smarter, AI-powered waste classification solution that helps users easily differentiate between recyclable and non-recyclable materials. Using machine learning and automation, our system aims to reduce human error in waste sorting, improve recycling rates, and contribute to a cleaner and greener planet.
+            <br><br>
+            By providing an intuitive web-based platform, we empower users to upload images of waste items, which are then classified into various categories such as metal, glass, plastic, and e-waste. Our goal is to streamline waste segregation at the source, making it easier for individuals, businesses, and municipalities to adopt sustainable waste management practices.
+            <br><br>
+            We believe that small actions lead to significant changes. Through our technological innovation, we aspire to create an impact that goes beyond just classification—promoting environmental responsibility and inspiring a culture of sustainability.
+            
+            </p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+    
+            <div class="footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/home#how-it-works">How It Works</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h2>Contact Us</h2>
+                <p>Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvrcNHVWFhrWSbsPxtSvnHkGmRNvRwRDDXRBmVxFgpWSGLpBHGSGBGMWTQcpdmgGTZTqsB">bhanuking0786@gmail.com</a></p>
+                <p>Phone: <a href="tel:+91 6393102534">+91 6393102534</a></p>
+            </div>
+    
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ashwani.dwivedi.3344"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" alt="Facebook"></a>
+                    <a href="https://wa.me/916393102534"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+                    <a href="https://www.instagram.com/_ashwani_18_/"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Waste Classification System. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="homescript.js"></script>
+
+</body>
+</html>

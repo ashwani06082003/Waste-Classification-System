@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+            position: absolute;
+            width: 100%;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <button id="moveButton" >☰</button>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Your existing content -->
+    <section>
+        <div class="container" id="box">
+            <div class="profile-wrapper">
+                <div class="profile-img-container">
+                    <img src="<%= user.profileimg ? '/uploads/' + user.profileimg : '/uploads/profile.png' %>" alt="Profile Photo">
+                </div>
+            
+                <!-- Camera Icon -->
+                <div class="camera-icon" id="openUploadModal">
+                    <img src="/camera-icon.png" alt="Upload">
+                </div>
+            </div>
+        
+            <ul style="display: grid; position: relative; gap: 29px; top: 50px; color: aliceblue; justify-content: center; list-style-type: none; left: 0px;">
+                <li>
+                    <h2><a href="#" style="color: white; text-decoration: none;" id="profileLink">Profile</a></h2>
+                </li>
+                <li>
+                    <h2><a href="#" style="color: white; text-decoration: none;" id="themeButton">Theme</a></h2>
+                </li>
+                <li>
+                    <h2><a href="../index.html#forgot-password-page" id="cp" style="color: white; text-decoration: none;">Change Password</a></h2>
+                </li>
+            </ul>
+            <a href="/logout" id="logout-link">
+                <button id="logout-button">Logout</button>
+            </a>
+            
+        </div>
+
+            <!-- Upload Modal -->
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="upload-modal" id="uploadModal">
+                <h3>Upload Profile Photo</h3>
+                <form
+                 id="profilePhotoForm"
+                action="http://localhost:3000/uploadProfile"
+                method="POST"
+                enctype="multipart/form-data"
+                >
+                <input type="file" name="profilePhoto" required>
+                <button type="submit">Upload</button>
+                </form>               
+                <button class="close-btn" id="closeUploadModal">Close</button>
+            </div>
+        <div id="themeModal">
+                <h2>Select Theme</h2>
+                <button id="lightMode">Light Mode</button>
+                <button id="darkMode">Dark Mode</button>
+            </div>
+        </div>
+    </section>
+
+<!--for updating the profile  -->
+
+    <div id="profileModal" class="modal">
+        <form id="updateProfileForm">
+          <span class="close-profile-modal" id="closeProfileModal">X</span>
+          <h2>Update Profile</h2>
+          <label for="oldUsername">Current Username:</label>
+          <input type="text" id="oldUsername" name="oldusername" required/>
+
+          <label for="newUsername">New Username:</label>
+          <input type="text" id="newUsername" name="newusername" required/>
+  
+          <label for="profilePassword">Password:</label>
+          <input type="password" id="profilePassword" name="password" required/>
+  
+          <label for="profileMobile">Mobile Number:</label>
+          <input type="text" id="profileMobile" name="mobile" required/>
+  
+          <button type="submit" id="saveProfileBtn">Save</button>
+        </form>
+    </div>
+
+  <div id="result"></div>
+
+    
+
+
+    <!-- Upload Image Section -->
+    <div id="upload-box">
+        <div class="imagetake">
+            <input type="file" id="uploadphotoInput" name="image" accept="image/*" style="display: none;" />
+            <label for="uploadphotoInput" id="uploadphotoLabel">
+            <img src="upload.png" alt="Upload" id="icon">
+            </label>
+
+            <button id="openCameraButton" onclick="openCameraPopup()">
+                <img src="camera.png" alt="captureImage" id="icon">
+              </button>
+        </div>
+    </div>
+
+                  <!-- Camera feed and capture controls -->
+                  <div id="camera-modal" style="display:none;">
+                    <div id="modal-content">
+                      <span id="close-btn">x</span>
+                      <h2>Camera</h2>
+                      <div id="camera-container">
+                        <video id="video" width="100%" height="auto" autoplay></video>
+                        <img id="previewImg" width="96%" height="auto" style="display:none;" />
+                        <button id="capture" onclick="capturePhoto()">Capture</button>
+                        <button id="retake" onclick="retakePhoto()" style="display:none;">Retake</button>
+                        <button id="upload" onclick="uploadPhoto()" style="display:none;">Upload</button>
+                      </div>
+                    </div>
+                  </div>
+
+    <!-- Image Slideshow -->
+    <!-- Home Page -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="image1.jpg" alt="Welcome Slide" />
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image2.png" alt="Slide 2" />
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image3.png" alt="Slide 3" />
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image4.png" alt="Slide 4" />
+        </div>
+      </div>
+
+<!-- further details below the image -->
+<div class="how-it-works">
+    <h1>How It Works?</h1>
+    <div class="steps-container">
+        <div class="step-box">
+            <h2>1️⃣ Upload an Image</h2>
+            <p>Capture or upload a clear image of the waste item using your device. Ensure that the waste is properly visible and centered in the frame with white background(prefrable) to help the system analyze it more accurately.</p>
+        </div>
+        <div class="step-box">
+            <h2>2️⃣ AI-Based Analysis</h2>
+            <p>Our intelligent AI model processes the uploaded image using advanced image recognition techniques and classifies it into one of the predefined waste categories such as plastic, paper, e-waste, etc.</p>
+        </div>
+        <div class="step-box">
+            <h2>3️⃣ Get Instant Results</h2>
+            <p>Based on the AI prediction, the system instantly displays the waste type along with additional classification details. For best accuracy, use images with plain white or clutter-free backgrounds.</p>
+        </div>
+        <div class="step-box">
+            <h2>4️⃣ Learn About Waste Disposal</h2>
+            <p>Along with the classification result, the system provides detailed guidance on how to dispose of or recycle the item properly according to its type, encouraging responsible environmental practices.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<section class="why-recycling-matters">
+    <h1>Why Recycling Matters?</h1>
+    <p>Recycling is essential for protecting our environment and building a more sustainable world. It reduces the burden on landfills, preserves valuable resources, lowers greenhouse gas emissions, and minimizes environmental pollution caused by improper waste disposal.</p>
+    <div class="recycling-benefits">
+        <div class="benefit-box">
+            <h2>🌍 Environmental Protection</h2>
+            <p>Recycling reduces the need for raw material extraction, decreases land and water pollution, and significantly lowers harmful emissions, playing a direct role in preserving biodiversity and natural ecosystems.</p>
+        </div>
+        <div class="benefit-box">
+            <h2>💰 Economic Benefits</h2>
+            <p>By creating employment opportunities in collection, processing, and recycling industries, recycling contributes to economic growth while also saving money on waste disposal and raw material production.</p>
+        </div>
+        <div class="benefit-box">
+            <h2>🔄 Energy Conservation</h2>
+            <p>Manufacturing products using recycled materials requires significantly less energy than producing them from scratch, leading to lower energy consumption and a reduced environmental footprint.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonials">
+    <h1>What Our Users Say</h1>
+    
+    <div class="testimonial-container" id="testimonial-container">
+       
+    </div>
+
+    <!-- Feedback Button -->
+    <button class="feedback-btn" onclick="openFeedbackForm()">Submit Feedback</button>
+    
+    <!-- Show All Feedbacks Button -->
+    <button class="feedback-btn" onclick="loadAllFeedbacks()">Show All Feedbacks</button>
+
+    <!-- All Feedback Modal -->
+    <div class="feedback-modal" id="allFeedbackModal">
+     <div class="feedback-box" style="max-height: 500px; overflow-y: auto;">
+       <h2>All Feedbacks</h2>
+       <div id="feedbackList">
+      <!-- Dynamic feedback cards will go here -->
+       </div>
+        <button class="close-btn" onclick="closeAllFeedback()">Close</button>
+     </div>
+    </div>
+
+    <!-- Feedback Form Modal -->
+    <div class="feedback-modal" id="feedbackModal">
+        <div class="feedback-box">
+            <h2>Submit Your Feedback</h2>
+            <label for="name">Name</label>
+            <input type="text" id="userName" placeholder="Your Name" required>
+            <label for="email">Email</label>
+            <input type="email" id="userEmail" placeholder="Your Email" required>
+            <label for="feedback">Feedback</label>
+            <textarea id="userFeedback" placeholder="Enter your feedback here..." required></textarea>
+            <button onclick="submitFeedback()">Submit</button>
+            <button class="close-btn" onclick="closeFeedbackForm()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Submission Confirmation Popup -->
+    <div class="success-popup" id="successPopup">
+        <p>Feedback Submitted!</p>
+        <button onclick="closeSuccessPopup()">OK</button>
+    </div>
+</section>
+
+
+        <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/home#how-it-works">How It Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvrcNHVWFhrWSbsPxtSvnHkGmRNvRwRDDXRBmVxFgpWSGLpBHGSGBGMWTQcpdmgGTZTqsB">bhanuking0786@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91 6393102534">+91 6393102534</a></p>
+        </div>
+
+        <div class="footer-social">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ashwani.dwivedi.3344"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" alt="Facebook"></a>
+                <a href="https://wa.me/916393102534"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/_ashwani_18_/"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Waste Classification System. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script src="homescript.js"></script>
+</body>
+</html>

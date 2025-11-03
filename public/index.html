@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <!-- Login Page -->
+<div id="login-page" class="page">
+    <form id="login-form">
+        <h3>Login</h3>
+        
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Your Name" id="username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" required>
+        
+        <button type="submit">Log In</button>
+        
+        <div class="links">
+            <a href="#forgot-password-page" id="forgot-password-link">Forgot Password?</a>
+            <a href="#sign-up-page" id="sign-up-link">Sign Up</a>
+        </div>
+        <p style="margin: 5px 0px 9px 155px;">OR</p>
+        <a href="#admin-page" id="admin-link" style="text-decoration: none; font-size: 15px; margin-left: 100px;">Login as an Admin</a>
+    </form>
+    
+</div>
+
+    <!--Admin Login Page -->
+    <div id="admin-page" class="page">
+        <form id="admin-form">
+            <h3>Admin Login</h3>
+            
+            <label for="username">Name</label>
+            <input type="text" placeholder="Enter Your Name" id="adminusername" required>
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="adminpassword" required>
+            
+            <button type="submit">Log In</button>
+            
+            <div class="links">
+                <a href="#login-page">Normal Login</a>
+            </div>
+        </form>
+        
+    </div>
+
+<!-- Sign Up Page -->
+<div id="sign-up-page" class="page">
+    <form id="sign-up-form">
+        <h3>Sign Up</h3>
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="new-username" required>
+
+        <label for="newpassword">Password:</label>
+        <input type="password" id="newpassword" name="newpassword" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <label for="mobile-number">Mobile Number:</label>
+        <input type="text" id="mobile-number" name="mobile-number" required>
+
+        <label for="email">E-mail:</label>
+        <input type="text" id="e-mail" name="e-mail" required>
+        <div class="links">
+            <a href="#forgot-password-page" id="forgot-password-link">Forgot Password?</a>
+            <a href="#login-page">Login</a>
+        </div>
+
+        <button type="submit">Sign Up</button>
+
+    </form>
+</div>
+
+<!-- Forgot Password Page -->
+<div id="forgot-password-page" class="page">
+        <form id="forgot-password-form" >
+            <h3>Forgot Password</h3>
+        <label for="registered-number">Your Registered Email:</label>
+        <input type="text" id="registered-number" name="registered-number" required>
+
+        <button type="button" id="send-otp">Send OTP</button>
+
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+
+        <button type="submit">Verify and Submit</button>
+        <div class="links">
+            <a href="#login-page">Login</a>
+            <a href="#sign-up-page" id="sign-up-link">Sign Up</a>
+        </div>
+    </form>
+</div>
+
+<!-- Reset Password Page -->
+<div id="reset-password-page" class="page">
+    <form id="reset-password-form">
+        <h3>Reset Password</h3>
+        <label for="new-password">New Password:</label>
+        <input type="password" id="new-password" name="new-password" required>
+        <label for="confirm-new-password">Confirm New Password:</label>
+        <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+        <button type="submit">Reset Password</button>
+        <div class="links">
+            <a href="#login-page">Login</a>
+            <a href="#sign-up-page" id="sign-up-link">Sign Up</a>
+        </div>
+    </form>
+</div>
+
+
+<!--JAVA SCRIPT------------------------------------------------------------------------->
+<script src="script.js"></script>
+</body>
+</html>

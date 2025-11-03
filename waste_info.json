@@ -1,0 +1,168 @@
+{
+    "Battery": {
+      "type": "Non-Recyclable",
+      "methods": [
+        "Store used batteries in a labeled, non-metallic container.",
+        "Take to an authorized e-waste collection center or retailer with a take-back program.",
+        "Avoid storing multiple batteries together to prevent short-circuiting."
+      ],
+      "disposal": "Never dispose of batteries in regular bins. Locate an e-waste facility nearby and hand over in-person.",
+      "environmental_impact": "Improper disposal can leak heavy metals like lead and cadmium into the environment, polluting soil and water.",
+      "examples": ["AA Batteries", "Lithium-ion batteries", "Car batteries", "Button cells"]
+    },
+    "Cardboard": {
+      "type": "Recyclable",
+      "methods": [
+        "Flatten boxes to save space.",
+        "Ensure cardboard is clean and dry before recycling.",
+        "Avoid recycling greasy or food-stained cardboard (e.g., pizza boxes)."
+      ],
+      "disposal": "Place in a paper/cardboard recycling bin or drop off at a municipal dry waste collection center.",
+      "environmental_impact": "Recycling cardboard reduces deforestation and conserves energy.",
+      "examples": ["Shipping boxes", "Cereal boxes", "Shoe boxes", "Toilet paper rolls"]
+    },
+    "Glass": {
+      "type": "Recyclable",
+      "methods": [
+        "Rinse thoroughly to remove residues.",
+        "Do not mix broken glass with recyclable glass—dispose of it separately in a labeled container.",
+        "Avoid mixing with ceramics or light bulbs."
+      ],
+      "disposal": "Use dedicated glass bins in public spaces or household recycling if available.",
+      "environmental_impact": "Recycling glass reduces raw material usage and saves up to 30% energy in glass production.",
+      "examples": ["Glass bottles", "Windows (if accepted)", "Glass jars", "Perfume bottles"]
+    },
+    "Keyboard": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Disconnect cables or batteries before disposal.",
+        "Donate if still functional.",
+        "Drop at an authorized e-waste collection center."
+      ],
+      "disposal": "Never dispose in regular trash. Use certified recyclers or e-waste bins.",
+      "environmental_impact": "Plastic casing and internal circuitry can leach toxic chemicals over time.",
+      "examples": ["Mechanical keyboards", "Wireless keyboards", "Gaming keyboards"]
+    },
+    "Metal": {
+      "type": "Recyclable",
+      "methods": [
+        "Remove plastic or rubber parts (if any).",
+        "Clean off food residue or oils.",
+        "Sort metals if required by local recycler (e.g., aluminum vs steel)."
+      ],
+      "disposal": "Take to a scrap dealer or use household metal recycling services.",
+      "environmental_impact": "Reduces mining needs and air/water pollution from metal processing.",
+      "examples": ["Aluminum cans", "Copper wires", "Steel utensils", "Metal pipes"]
+    },
+    "Microwave": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Unplug and remove any detachable parts.",
+        "Check with manufacturer for take-back schemes.",
+        "Drop off at e-waste collection points."
+      ],
+      "disposal": "Do not dispose of in standard waste. Must be processed by an e-waste recycler.",
+      "environmental_impact": "Contains capacitors and heavy metals that can cause environmental harm if incinerated or dumped.",
+      "examples": ["Countertop microwave", "Convection microwave ovens"]
+    },
+    "Mobile": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Back up data and perform a factory reset.",
+        "Remove SIM and memory cards.",
+        "Drop at retailer or authorized collection center with buyback or recycling options."
+      ],
+      "disposal": "Never throw in dustbins. Hand over to authorized mobile phone recyclers.",
+      "environmental_impact": "Smartphones contain rare earth metals, plastics, and chemicals that can harm ecosystems.",
+      "examples": ["Smartphones", "Feature phones", "Tablets"]
+    },
+    "Mouse": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Remove batteries if wireless.",
+        "Ensure it's non-functional before disposal.",
+        "Drop off at e-waste drop zones or certified recyclers."
+      ],
+      "disposal": "Like all peripherals, must be handed over for e-waste treatment.",
+      "environmental_impact": "Plastic and circuits can leach microplastics and toxins.",
+      "examples": ["Optical mouse", "Wireless mouse", "Gaming mouse"]
+    },
+    "Non Recyclable": {
+      "type": "Non-Recyclable",
+      "methods": [
+        "Minimize usage and opt for reusable alternatives.",
+        "Place securely in black bags to prevent contamination.",
+        "Do not mix with dry or recyclable waste."
+      ],
+      "disposal": "Dispose through municipal waste collection. Ensure it goes to a sanitary landfill, not open dumping.",
+      "environmental_impact": "Takes hundreds of years to decompose and often ends up in oceans or rivers.",
+      "examples": ["Used tissues", "Sanitary pads", "Dirty food wrappers", "Thermocol"]
+    },
+    "Paper": {
+      "type": "Recyclable",
+      "methods": [
+        "Keep clean and dry.",
+        "Do not recycle shredded paper with other sheets.",
+        "Separate glossy/magazine paper if required."
+      ],
+      "disposal": "Use a dry waste bin or submit to local paper recycling units.",
+      "environmental_impact": "Saves trees and reduces methane emissions from landfills.",
+      "examples": ["Notebooks", "Printer paper", "Newspapers", "Magazines"]
+    },
+    "PCB": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Do not attempt to dismantle PCBs manually.",
+        "Store in a cool, dry place until pickup.",
+        "Give to certified e-waste dismantlers."
+      ],
+      "disposal": "Highly toxic—must be recycled in specialized facilities that extract gold, copper, and silver safely.",
+      "environmental_impact": "Improper disposal can release brominated flame retardants and heavy metals.",
+      "examples": ["Computer motherboard", "TV circuit boards", "Mobile logic boards"]
+    },
+    "Plastic": {
+      "type": "Recyclable",
+      "methods": [
+        "Rinse and dry to avoid contamination.",
+        "Follow local plastic code numbers (e.g., PET, HDPE).",
+        "Avoid mixing biodegradable plastics with regular plastic waste."
+      ],
+      "disposal": "Use municipal or NGO-led plastic recycling bins. Some supermarkets accept plastic return.",
+      "environmental_impact": "Plastic pollution harms marine life and creates microplastic contamination.",
+      "examples": ["PET bottles", "Plastic bags", "Food containers", "Straws"]
+    },
+    "Printer": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Remove cartridges and recycle separately.",
+        "Check for buyback or trade-in programs from manufacturers.",
+        "Take to an e-waste center or tech store that accepts used hardware."
+      ],
+      "disposal": "Ink residues and components require special disposal. Never throw in general waste.",
+      "environmental_impact": "Ink can leak into the soil, and plastic shells increase landfill volume.",
+      "examples": ["Inkjet printer", "Laser printer", "All-in-one printers"]
+    },
+    "Television": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Check warranty or return policies if under service.",
+        "Do not smash or dismantle (especially CRTs).",
+        "Use bulk pickup or drop off at e-waste center."
+      ],
+      "disposal": "CRT and LED TVs are hazardous—dispose of through formal e-waste channels.",
+      "environmental_impact": "Lead from screens and mercury from backlights are dangerous if released into the environment.",
+      "examples": ["CRT TV", "LED TV", "Smart TV"]
+    },
+    "Washing Machine": {
+      "type": "Electronic Waste",
+      "methods": [
+        "Drain water and detach hoses before disposal.",
+        "Contact a scrap dealer or manufacturer with recycling program.",
+        "Some cities offer bulk pickup for large appliances."
+      ],
+      "disposal": "Needs to be processed at a large appliance recycling facility.",
+      "environmental_impact": "Heavy metals and plastic parts can cause soil and water pollution if not treated.",
+      "examples": ["Front load machine", "Top load machine", "Semi-automatic machine"]
+    }
+  }
+  

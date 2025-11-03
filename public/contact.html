@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+    
+    /* Basic Reset & Font */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background-color: #080710; /* Dark background */
+      color: #fff;              /* Light text */
+    }
+
+    body.light-mode {
+      background-color: rgb(201, 194, 205);/* or your desired light background */
+    color: #000;
+}
+
+.light-mode h1, 
+.light-mode h2, 
+.light-mode h3, 
+.light-mode p, 
+.light-mode a,
+.light-mode li, 
+.light-mode span {
+    color: black !important;
+}
+
+    /* Navbar */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+      z-index: 1000;
+    }
+    #navbar ul {
+      list-style-type: none;
+      display: flex;
+    }
+    #navbar li {
+      margin: 0 10px;
+    }
+    #navbar a {
+      text-decoration: none;
+      color: #ffffff; /* White text for links */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* Contact Section */
+    .contact_us_green {
+      padding-bottom: 215px;
+    display: flex
+;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    }
+    .container-box {
+      position: relative;
+      top: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .text-content {
+      margin-bottom: 30px;
+    }
+    .text-content .contactus-head {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .text-content .contactus-subhead {
+      max-width: 400px;
+      font-size: 18px;
+      color: #cfcfcf;  /* Slightly lighter gray */
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* Contact Details */
+    .workik-contact-bigbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .workik-contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .text-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+    .contact-svg {
+      width: 40px;
+      height: 40px;
+      filter: invert(100%); /* Makes the icon white/gray in dark mode */
+    }
+    .contact-text {
+      color: #cfcfcf;
+      font-size: 16px;
+    }
+    .address .contact-text {
+      text-decoration: none;
+    }
+
+    .footer {
+    width: 101%;
+    background: #121212;
+    color: #f0f0f0;
+    padding: 50px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 100;
+    margin: auto;
+}
+
+.light-mode .footer{
+    background: #ccc;
+}
+
+.footer h2 {
+    font-size: 22px;
+    color: #28a745;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #28a745;
+    margin-top: 5px;
+}
+
+.footer p, .footer ul {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin: 8px 0;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #28a745;
+}
+
+.footer-contact a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img:hover {
+    filter: brightness(1);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+    /* Social Media */
+    .social-media-links {
+      margin-top: 40px;
+      width: 250px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .social-svg {
+      width: 35px;
+      height: 35px;
+    }
+    html {
+  scroll-behavior: smooth;
+}
+
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .text-content .contactus-head {
+        font-size: 30px;
+      }
+      .workik-contact-bigbox {
+        gap: 15px;
+      }
+    }
+    @media (max-width: 500px) {
+      .text-content .contactus-head {
+        font-size: 26px;
+      }
+      .text-content .contactus-subhead {
+        font-size: 16px;
+      }
+      .social-media-links {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+<section>
+  <div class="contact_us_green" id="ifgi">
+    <div class="container-box">
+      <div class="text-content">
+        <p class="contactus-head">Contact us</p>
+        <p class="contactus-subhead">
+          Contact us through the given details. We reply within an hour if you email us via Gmail.
+        </p>
+      </div>
+      <div class="workik-contact-bigbox">
+        <div class="workik-contact-box">
+          <div class="phone text-box">
+            <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
+            <p class="contact-text">+91 6393102534</p>
+          </div>
+          <div class="address text-box">
+            <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvrcNHVWFhrWSbsPxtSvnHkGmRNvRwRDDXRBmVxFgpWSGLpBHGSGBGMWTQcpdmgGTZTqsB"
+               class="contact-text">
+              bhanuking0786
+            </a>
+          </div>
+          <div class="mail text-box">
+            <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
+            <p class="contact-text">A/52 Kalyanpur Lucknow.</p>
+          </div>
+        </div>
+        <div class="social-media-links">
+          <a href="https://wa.me/916393102534" target="_blank">
+            <img class="social-svg" src="https://cdn-icons-png.flaticon.com/512/124/124034.png">
+          </a>
+          <a href="https://www.instagram.com/_ashwani_18_/" target="_blank">
+            <img class="social-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+          </a>
+          <a href="https://www.facebook.com/ashwani.dwivedi.3344" target="_blank">
+            <img class="social-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+      <div class="footer-links">
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/home#how-it-works">How It Works</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About Us</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvrcNHVWFhrWSbsPxtSvnHkGmRNvRwRDDXRBmVxFgpWSGLpBHGSGBGMWTQcpdmgGTZTqsB">bhanuking0786@gmail.com</a></p>
+          <p>Phone: <a href="tel:+91 6393102534">+91 6393102534</a></p>
+      </div>
+
+      <div class="footer-social">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/ashwani.dwivedi.3344"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" alt="Facebook"></a>
+              <a href="https://wa.me/916393102534"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+              <a href="https://www.instagram.com/_ashwani_18_/"><img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" alt="Instagram"></a>
+          </div>
+      </div>
+  </div>
+  
+  <div class="footer-bottom">
+      <p>&copy; 2025 Waste Classification System. All Rights Reserved.</p>
+  </div>
+</footer>
+  <script src="homescript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1023 @@
+/* styles for home pages */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap');
+
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #080710;
+}
+
+#lightMode {
+    background: #f0f0f0;
+    color: black;
+}
+
+.light-mode {
+    background-color: rgb(201, 194, 205);
+    color: #222; /* Darker text for better contrast */
+}
+
+.light-mode h1, 
+.light-mode h2, 
+.light-mode h3, 
+.light-mode p, 
+.light-mode a,
+.light-mode li, 
+.light-mode span {
+    color: black !important;
+}
+
+
+#darkMode {
+    background: black;
+    color: white;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child {
+    background: linear-gradient(#1845ad, #23a2f6);
+    left: -80px;
+    top: -80px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right, #ff512f, #f09819);
+    right: -30px;
+    bottom: -80px;
+}
+
+form {
+    height: fit-content;
+    width: 400px;
+    background-color: rgb(0 0 0 / 89%);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgb(8 7 16 / 82%);
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+form input {
+    width: 93%;
+    margin-bottom: 16px;
+    padding: 9px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #e5e5e5;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    display: block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgba(255, 255, 255, 0.13);
+    position: fixed;
+    top: 60px;
+    width: 250px;
+    height: 620px;
+    transition: left 0.5s ease;
+    left: -258px;
+    z-index: 999;
+}
+
+.page {
+    display: none;
+
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #eeeeee;
+    margin-top: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social div {
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+    text-align: center;
+}
+
+.social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+.social .fb {
+    margin-left: 25px;
+}
+
+.social i {
+    margin-right: 4px;
+}
+#navbar {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    width: 100%; /* Full width */
+    background-color: #333; /* Background color */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Centers the list horizontally */
+    align-items: center; /* Centers the list vertically */
+    height: 60px; /* Set a height for the navbar */
+    z-index: 1000; /* Ensures it stays on top */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+#themeModal{
+    display: none;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);background: rgba(0, 0, 0, 0.8);padding: 20px;border-radius: 10px;text-align: center;background: rgb(128, 109, 145); padding: 20px;border-radius: 10px;z-index: 4003;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#navbar li {
+    margin: 0 10px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+#moveButton {
+    width: 40px;
+    height: 67px;
+    position: absolute;
+    left: 0;
+    top: -58px;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    background-color: #08071073;
+    
+}
+
+.light-mode #moveButton{
+    background-color: rgb(201, 194, 205);
+}
+
+#logout-button {
+    border-radius: 25px;
+    box-shadow: 4px 5px 15px 0px black;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 100px; /* Ensure padding doesn't break layout */
+    background-color: #2c282894;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#logout-link {
+    text-decoration: none; /* To remove the underline from the anchor tag */
+}
+
+#logout-button:hover {
+    background-color: #252222; /* To remove the underline from the anchor tag */
+}
+
+#upload-box {
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 145px;
+    width: 232px;
+    bottom: 50px;
+    right: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    justify-content: center;
+    padding-top: 10px;
+    border-radius: 61px;
+    z-index: 3000;
+}
+
+.imagetake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between Upload and Capture buttons */
+}
+
+#uploadphotoInput, #uploadphotoLabel, #openCameraButton {
+    margin: auto;
+    border-radius: 31px;
+    background-color: white;
+    height: 45px;
+    width: 71px;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+#icon {
+    height: 30px; /* Adjust to fit inside the button */
+    width: 30px; /* Maintain aspect ratio by keeping equal height and width */
+    object-fit: contain; /* Ensure the image fits without distortion */
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    position: absolute; /* Keeps it behind other elements */
+    top: 61px; /* Adjust this to position it lower on the page */
+    left: 0;
+    width: 100%; /* Adjust width if needed */
+    height: 565px; /* Covers half of the viewport height */
+    z-index: -1; /* Ensures it's behind other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents overflow issues */
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #080710;
+    text-align: center;
+}
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the full image is visible without cropping */
+}
+
+.mySlides.active {
+    display: block;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* How It Works Section */
+/* How It Works Section */
+.how-it-works {
+    width: 86%;
+    max-width: 1100px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.how-it-works h1 {
+    font-size: 44px;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Steps Container */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Step Box */
+.step-box {
+    width: 85%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 8px solid #28a745;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Step Box Heading */
+.step-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+/* Step Box Text */
+.step-box p {
+    font-size: 18px;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* why recycling matters part */
+.why-recycling-matters {
+    width: 85%;
+    max-width: 1100px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.why-recycling-matters h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.why-recycling-matters p {
+    font-size: 20px;
+    color: #e0e0e0;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recycling-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.benefit-box {
+    width: 100%;
+    max-width: 320px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease-in-out;
+    border-left: 6px solid #28a745;
+}
+
+.benefit-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.benefit-box h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.benefit-box p {
+    font-size: 18px;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+/* 
+the testimonial part */
+
+/* Testimonials Section */
+/* Testimonials Section */
+.testimonials {
+    width: 85%;
+    max-width: 1100px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.testimonials h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #28a745;
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align items in the center */
+    gap: 20px; /* Spacing between testimonial cards */
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    position: relative;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #28a745;
+    object-fit: cover;
+}
+
+
+.testimonial-card h3 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-size: 18px;
+    color: #f0f0f0;
+    line-height: 1.5;
+}
+
+/* Feedback Button */
+.feedback-btn {
+    bottom: auto;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.feedback-btn:hover {
+    background: #218838;
+}
+
+.feedback-box {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 26px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    max-height: 80vh;
+    position: relative;
+}
+
+.feedback-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feedback-box input,
+.feedback-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.feedback-box button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    background: #28a745;
+    color: #fff;
+    border-radius: 6px;
+    min-width: 90px;
+    transition: 0.3s;
+}
+
+.feedback-box .close-btn {
+    background: #dc3545;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.feedback-box button:hover {
+    transform: scale(1.05);
+  }
+  #feedbackList .testimonial-card {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    position: relative;
+    opacity: 1 !important; /* OVERRIDE */
+}
+
+#feedbackList .testimonial-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#feedbackList .testimonial-card h3 {
+    margin: 5px 0 3px;
+    font-size: 18px;
+    color: #333;
+}
+
+#feedbackList .testimonial-card p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+#feedbackList .testimonial-card button {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+  .close-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.feedback-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it appears on top */
+}
+
+/* Success Popup */
+.success-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.success-popup button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #fff;
+    color: #28a745;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+/* 
+footerr part */
+/* Footer Styling */
+.footer {
+    width: 101%;
+    background: #121212;
+    color: #f0f0f0;
+    padding: 50px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.light-mode .footer{
+    background: #ccc;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 100;
+    margin: auto;
+}
+
+.footer h2 {
+    font-size: 22px;
+    color: #28a745;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #28a745;
+    margin-top: 5px;
+}
+
+.footer p, .footer ul {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin: 8px 0;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #28a745;
+}
+
+.footer-contact a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img:hover {
+    filter: brightness(1);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+/* camera pop up */
+#camera-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 523px;
+    width: 90%;
+  }
+  
+  #close-btn {
+    position: relative;
+    right: -211px;
+    top: -1px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal {
+    display: none; /* hidden by default */
+    position: fixed; 
+    z-index: 9999; /* stays on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  }
+
+  /* Modal content box */
+
+  /* Close button (X) in top-right corner */
+  .close-profile-modal {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Simple form styling */
+  #updateProfileForm label {
+    display: block;
+    margin: 8px 0 4px;
+  }
+  #updateProfileForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+  #saveProfileBtn {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #information {
+    background-color: #23a2f6;
+    width: 350px;
+    height: 230px;
+    border-radius: 63px;
+    margin-right: 80px;
+    margin-left: 80PX;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    font-size: 25px;
+  }
+
+  #data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    font-size: 25px;
+  }
+
+  .profile-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.profile-img-container {
+    border-radius: 100px;
+    background-color: azure;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img-container img {
+    top: auto;
+    width: 100%;
+    height: 100%; /* Change from 124% to 100% */
+    object-fit: cover; /* Ensures the image fully covers the box */
+    border-radius: 100px;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: white;
+    width: 35px; /* Adjusted size */
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Soft shadow for better visibility */
+    cursor: pointer;
+}
+
+.camera-icon img {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+}
+
+/* MODAL STYLING */
+.upload-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 21000;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

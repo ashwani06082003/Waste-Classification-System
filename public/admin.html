@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styleadmin.css">
+  
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <div class="logo-image">
+        <img src="logo.png" alt=""> 
+      </div>
+    </div>
+    <div class="menu-items">
+      <ul class="navLinks">
+        <li class="navList active">
+          <a href="#">
+            <ion-icon name="home-outline"></ion-icon>
+            <span class="links">Dashboard</span>
+          </a>
+        </li>
+        <li class="navList">
+          <a href="#">
+            <!-- Try alternate icons here if one vanishes -->
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <span class="links">Analytics</span>
+          </a>
+        </li>
+        <li class="navList">
+          <a href="#">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <span class="links">Users</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="bottom-link">
+        <li>
+          <a href="#" onclick="toggleProfilePopup()">
+            <ion-icon name="person-outline"></ion-icon>
+            <span class="links">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="../index.html">
+            <ion-icon name="log-out-outline"></ion-icon>
+            <span class="links">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Profile Popup -->
+  <div id="profilePopup" class="popup-container">
+    <div class="popup-content">
+      <h2>Admin Profile</h2> 
+      <label >ID:</label>
+      <input type="text" id="adminId" value="722028" readonly>
+      <label >Name:</label>
+      <input type="text" id="adminName" value="Ashwani" readonly>
+      <label >Mobile:</label>
+      <input type="text" id="adminMobile" value="9450400331" readonly>
+      <label >Password:</label>
+      <input type="password" id="adminPassword" value="Ashwani@0786" readonly>
+      <button id="editBtn" onclick="toggleEdit()">Edit</button>
+      <button id="saveBtn" onclick="saveProfile()" style="display: none;">Save</button>
+      <button class="close-btn" onclick="toggleProfilePopup()">Close</button>
+    </div>
+  </div>
+
+  <section class="dashboard">
+    <div class="container">
+      <div class="overview">
+        <div class="title">
+          <ion-icon name="speedometer"></ion-icon>
+          <span class="text">Dashboard</span>
+        </div>
+        <div class="boxes">
+          <div class="box box1">
+            <ion-icon name="eye-outline"></ion-icon>
+            <span class="text">Total Users</span>
+            <span class="number" id="total-users">Loading...</span>
+          </div>
+          <div class="box box2">
+            <ion-icon name="people-outline"></ion-icon>
+            <span class="text">New Users</span>
+            <span class="number" id="new-users">Loading...</span>
+          </div>
+          <div class="box box3">
+            <ion-icon name="cash-outline"></ion-icon>
+            <span class="text">Mostly Used Users</span>
+            <span class="number" id="premium-users">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dash Board Activities -->
+    <div class="data-table activityTable">
+      <div class="title">
+        <ion-icon name="time-outline" style="font-size: 23px;"></ion-icon>
+        <span class="text" style="font-size: 26px;">Activities</span>
+      </div>
+      <div>
+        <!-- Table or section goes here -->
+        <div class="boxes">
+          <div class="container">
+            <!-- Waste Info Section -->
+            <div class="section" id="waste-info">
+              <h2 class="section-title">Waste Information</h2>
+              <table class="info-table">
+                <tr>
+                  <td><ion-icon name="trash-outline" class="icon"></ion-icon> <span class="text"><b>Total Waste Classified</b></span></td>
+                  <td><span class="number" id="total-waste">Loading...</span></td>
+                </tr>
+                <tr>
+                  <td><ion-icon name="trash-bin-outline" class="icon"></ion-icon> <span class="text"><b>Delete Waste</b></span></td>
+                  <td>
+                    <button onclick="deleteAllWaste()" class="action-btn">Delete All Waste Images</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          
+            <!-- Predictions Info Section -->
+            <div class="section" id="predictions-info">
+              <h2 class="section-title">Predictions Information</h2>
+              <div class="predictions">
+                <div class="prediction-box">
+                  <ion-icon name="checkmark-circle-outline" class="icon"></ion-icon>
+                  <span class="text">Correct Predictions</span>
+                  <span class="number" id="correct-predictions">Loading...</span>
+                </div>
+                <div class="prediction-box">
+                  <ion-icon name="close-circle-outline" class="icon"></ion-icon>
+                  <span class="text">Incorrect Predictions</span>
+                  <span class="number" id="incorrect-predictions">Loading...</span>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Feedback Section -->
+            <div class="section" id="feedback-info">
+              <h2 class="section-title">Feedback Information</h2>
+              <div class="feedback">
+                <div class="feedback-box positive">
+                  <ion-icon name="checkmark-done-outline" class="icon"></ion-icon>
+                  <span class="text">Positive Feedbacks</span>
+                  <span class="number" id="positive-feedback">Loading...</span>
+                </div>
+                <div class="feedback-box negative">
+                  <ion-icon name="close-circle-outline" class="icon"></ion-icon>
+                  <span class="text">Negative Feedbacks</span>
+                  <span class="number" id="negative-feedback">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+                 
+      </div>
+    </div>
+    </div> 
+    <!-- dashboard part end -->
+    <!-- ANALYTICS PART -->
+    <div style="display:none" class="data-table userDetailsTable">
+      <div class="title">
+        <ion-icon name="analytics-outline" style="font-size: 23px;"></ion-icon>
+        <span class="text" style="font-size: 26px;">Data</span>
+      </div>
+    
+      <!-- Waste Type Distribution Chart -->
+      <div class="chart-section">
+        <h3>Waste Type Distribution</h3>
+        <div class="chart-container">
+          <canvas id="wasteChart" width="300" height="200"></canvas>
+        </div>
+      </div>
+    
+      <!-- Uploads Over Last 7 Days -->
+      <div class="chart-section">
+        <h3>Uploads Over Last 7 Days</h3>
+        <div class="chart-container">
+          <canvas id="uploadChart" width="400" height="250"></canvas>
+        </div>
+      </div>
+    
+      <!-- Top Waste Categories -->
+      <div class="chart-section">
+        <h3>Top Waste Categories</h3>
+        <div class="chart-container">
+          <canvas id="topCategoriesChart" width="400" height="250"></canvas>
+        </div>
+      </div>
+    
+      <!-- Prediction Accuracy Over Time -->
+      <div class="chart-section">
+        <h3>Prediction Accuracy Over Time</h3>
+        <div class="chart-container">
+          <canvas id="confidenceChart" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Users part  -->
+    <div style="display:none" class="data-table EditUserRole">
+      <div class="title">
+        <ion-icon name="person-circle-outline" style="font-size: 26px;"></ion-icon>
+        <span class="text" style="font-size: 26px;">Users</span>
+      </div>
+      <div class="table-container">
+        <h2>Registered Users</h2>
+        <div class="search-bar" style="margin-bottom: 10px;">
+          <input type="text" id="searchInput" placeholder="Search by Username, Email, or Mobile" style="padding: 5px; width: 250px;">
+          <button onclick="searchUsers()" style="padding: 5px 10px;">Search</button>
+          <button onclick="fetchUsers()" style="padding: 5px 10px;">Show All</button>
+        </div>
+        
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Mostly Used Users</th>
+              <th>Signup Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersList">
+            <!-- Users will be inserted dynamically here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script src="adminscript.js"></script>
+  
+  <!-- Ionicons Scripts -->  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</body>
+</html>
+
